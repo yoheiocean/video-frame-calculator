@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Frame Calculator v.2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Video Frame Calculator</h1>
+    <form id="videoForm" enctype="multipart/form-data">
+        <input type="file" id="videoInput" name="videoFile" accept="video/*" style="display: none;">
+        <button type="button" onclick="chooseAndUpload()">Upload Video</button>
+        <p id="fileNameDisplay">No file selected</p>
+        <br>
+        <input type="number" id="fpsInput" placeholder="Enter FPS">
+        <span class="info-icon" onmouseover="showTooltip()" onmouseout="hideTooltip()" ontouchstart="showTooltipMobile()" ontouchend="hideTooltipMobile()">&#9432;</span>
+        <div id="tooltip" class="hidden">
+            To find the frames per second (FPS) of a video on your iPhone or Android:<br><br>
+            1. Open the 'Photos' app on your device.<br>
+            2. Select the video you're interested in.<br>
+            3. Look for an option or icon that provides video information.<br>
+            4. Check the details for the frames per second (FPS) information.<br><br>
+            Please note that the exact steps may vary depending on your device and the app you're using.
+        </div>
+        <p id="totalFramesDisplay"></p>
+        <br>
+        <div id="sticky">
+        <input type="number" id="frameNumberInput" value="" placeholder="Enter Frame Number">
+        <button type="button" onclick="calculateTime()">Go to Frame</button>
+        <button id="nextFrameButton">Next Frame</button>
+        <p id="timeDisplay"></p>
+        </div>
+        <video id="videoPlayer" controls></video>
+        <p id="link">Visit <a href="https://taiyo.surf/journal" target="_blank">Yohei's Journal</a> to see how this program was developed.</p>
+    </form>
+    <script src="main.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/mediainfo.js"></script>
+</body>
+</html>
